@@ -28,20 +28,20 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Como gerar o certificado p12
 
-Criar a chave privada
+Criar a chave privada<br>
 openssl genrsa -out api-certificate.pem 2048
 
-Gerar o csr
+Gerar o csr<br>
 openssl req -new -sha256 -key api-certificate.pem -out api-certificate.csr
 
-Comando pra gerar o arquivo pem
+Comando pra gerar o arquivo pem<br>
 openssl req -x509 -sha256 -days 365 -key api-certificate.pem -in api-certificate.csr -out api-certificate.pem
 
-Comando pra gerar o p12
+Comando pra gerar o p12<br>
 openssl pkcs12 -export -out api-identity.p12 -inkey key.pem -in api-certificate.pem
 
-Comando pra gerar o arquivo crt a partir da pasta onde estiver o certificado p12
+Comando pra gerar o arquivo crt a partir da pasta onde estiver o certificado p12<br>
 openssl pkcs12 -in api-certificate.p12 -clcerts -nokeys -out api-certificate.crt
 
-Comando pra gerar o arquivo key a partir da pasta onde estiver o certificado p12
+Comando pra gerar o arquivo key a partir da pasta onde estiver o certificado p12<br>
 openssl pkcs12 -in api-certificate.p12 -nocerts -nodes -out api-certificate.key
