@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Comando pra gerar o arquivo crt a partir da pasta onde estiver o certificado p12
+openssl pkcs12 -in api-certificate.p12 -clcerts -nokeys -out api-certificate.crt
+
+Comando pra gerar o arquivo key a partir da pasta onde estiver o certificado p12
+openssl pkcs12 -in api-certificate.p12 -nocerts -nodes -out api-certificate.key
